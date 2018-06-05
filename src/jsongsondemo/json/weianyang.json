@@ -1,0 +1,8 @@
+{
+  "name": "weianyang",
+  "age": 22,
+  "school": "HUNNU",
+  "birthday": "1995-1-1",
+  "cars": ["car1", "car2"],
+  "nothing": null
+}
