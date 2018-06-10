@@ -1,4 +1,4 @@
-package springdemo.beanwired;
+package springdemo.explicitconfig;
 
 import org.springframework.stereotype.Component;
 
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
  */
 
 //
-@Component
-public class SpiderMan implements Person{
+@Component("spiderman")
+public class SpiderMan implements Person {
 
     private String name;
 
@@ -30,7 +30,7 @@ public class SpiderMan implements Person{
 
     @Override
     public String say() {
-        return "I am a spider man.";
+        return "I am the " + name;
     }
 
 }

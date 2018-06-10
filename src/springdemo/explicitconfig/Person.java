@@ -1,4 +1,4 @@
-package springdemo.beanwired;
+package springdemo.explicitconfig;
 
 /**
  * @Author: weianyang

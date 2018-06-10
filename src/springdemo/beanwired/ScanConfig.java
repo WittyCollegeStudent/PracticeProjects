@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 //定义配置类，用于替换xml文件
 @Configuration
+//启用组件扫描(完整包名)，默认扫描当前包
 @ComponentScan
 public class ScanConfig {
 }
