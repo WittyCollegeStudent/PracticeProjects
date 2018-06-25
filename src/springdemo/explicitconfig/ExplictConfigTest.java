@@ -40,6 +40,8 @@ public class ExplictConfigTest {
     @Test
     public void officeEqualsOffice2(){
         System.out.println("office equals office2 : " + (Objects.equals(office, office2)));
+        System.out.println("office equals office2 on braveman: " + (Objects.equals(office.getPerson(), office2.getPerson())));
+        System.out.println("office equals braveman: " + (Objects.equals(office.getPerson(), braveman)));
     }
 
     @Test

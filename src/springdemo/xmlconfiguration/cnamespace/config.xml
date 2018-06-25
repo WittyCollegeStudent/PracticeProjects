@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--构造器注入方式二：c-命名空间-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="tool" class="springdemo.xmlconfiguration.cnamespace.Tool"/>
+
+    <bean id="c_spiderMan_arg_tool" class="springdemo.xmlconfiguration.cnamespace.SpiderMan"
+        c:tool-ref="tool"/>
+
+    <bean id="c_spiderMan_arg_param" class="springdemo.xmlconfiguration.cnamespace.SpiderMan"
+          c:name="cnamespace_name"
+          c:clothes="cnamespace_name"
+          c:age="22479"/>
+
+</beans>

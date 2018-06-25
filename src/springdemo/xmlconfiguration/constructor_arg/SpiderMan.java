@@ -1,28 +1,34 @@
-package springdemo.beanwired;
+package springdemo.xmlconfiguration.constructor_arg;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import springdemo.beanwired.Person;
 
 /**
  * @Author: weianyang
  * @Date: 2018/6/6 19:56
  * @Description: weianyang
  */
-
-//
-@Component
 public class SpiderMan implements Person{
 
     private String name;
+
+    private String clothes;
+
+    private Tool tool;
+
+    private Integer age;
 
     public SpiderMan(){
         this.name = "SpiderMan";
     }
 
-    @Autowired(required = false)
+    public SpiderMan(String name, String clothes, Integer age){
+        this.name = name;
+        this.clothes = clothes;
+        this.age = age;
+    }
+
     public SpiderMan(Tool tool){
-        this.name = "SpiderMan";
-        System.out.println("constructor param tool");
+        this.tool = tool;
     }
 
     @Override
@@ -37,7 +43,7 @@ public class SpiderMan implements Person{
 
     @Override
     public String say() {
-        return "I am a spider man.";
+        return "My name is " + name + ", clothes is " + clothes + ", age is " + age;
     }
 
 }

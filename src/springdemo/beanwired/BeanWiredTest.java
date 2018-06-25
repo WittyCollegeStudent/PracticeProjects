@@ -28,7 +28,7 @@ public class BeanWiredTest {
     private Person person;
 
     @Autowired
-    @Qualifier("braveman1") //当有多个符合条件的bean时，需要使用此标签指定备选bean的ID
+    @Qualifier("spiderMan") //当有多个符合条件的bean时，需要使用此标签指定备选bean的ID
     private Person person2;
 
     @Test

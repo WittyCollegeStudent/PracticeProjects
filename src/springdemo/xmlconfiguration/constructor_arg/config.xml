@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--构造器注入方式一：<constructor-arg>元素-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="tool" class="springdemo.xmlconfiguration.constructor_arg.Tool"/>
+
+    <bean id="spiderMan_arg_tool" class="springdemo.xmlconfiguration.constructor_arg.SpiderMan">
+        <constructor-arg ref="tool"/>
+    </bean>
+
+    <bean id="spiderMan_arg_name_clothes" class="springdemo.xmlconfiguration.constructor_arg.SpiderMan">
+        <constructor-arg value="weianyang"/>
+        <constructor-arg value="clothes"/>
+        <constructor-arg value="22"/>
+    </bean>
+
+</beans>
