@@ -1,5 +1,6 @@
 package springdemo.beanwired;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
  * @Description: weianyang
  */
 @Component("braveman1")
+@Qualifier("braveman2")
 public class BraveMan implements Person{
 
     private String name;

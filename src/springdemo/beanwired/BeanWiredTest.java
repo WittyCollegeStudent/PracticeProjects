@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-
 /**
  * @Author: weianyang
  * @Date: 2018/6/6 18:40
@@ -25,18 +24,30 @@ public class BeanWiredTest {
 
     @Autowired
     @Qualifier("braveman1") //当有多个符合条件的bean时，需要使用此标签指定备选bean的ID
-    private Person person;
+    private Person braveman1;
+
+    @Autowired
+    @Qualifier("braveman2")
+    private Person braveman2;
 
     @Autowired
     @Qualifier("spiderMan") //当有多个符合条件的bean时，需要使用此标签指定备选bean的ID
-    private Person person2;
+    private Person spiderman;
 
     @Test
     public void personShouldNotBeNULL(){
-        System.out.println("person is NULL : " + (person == null));
-        System.out.println("person type is : " + (person.getClass()));
-        System.out.println("person name is : " + (person.getClass().getCanonicalName()));
-        person.say();
+        System.out.println("braveman1 is NULL : " + (braveman1 == null));
+        System.out.println("braveman1 type is : " + (braveman1.getClass()));
+        System.out.println("braveman1 name is : " + (braveman1.getClass().getCanonicalName()));
+        braveman1.say();
+    }
+
+    /**
+     * 判断braveman1和braveman2是否是同一个对象
+     */
+    @Test
+    public void braveman1EqualsBraveman2(){
+        System.out.println("braveman1 equals braveman2 : " + (braveman1.equals(braveman2)));
     }
 
     /**
@@ -44,14 +55,14 @@ public class BeanWiredTest {
      */
     @Test
     public void personEqualsPerson2(){
-        System.out.println("person == person2 : " + (person == person2));
+        System.out.println("braveman1 == spiderman : " + (braveman1 == spiderman));
         System.out.println("------BEFORE SET PERSON NAME------");
-        System.out.println("person name : " + (person.getName()));
-        System.out.println("person2 name : " + (person2.getName()));
-        person.setName("person");
+        System.out.println("braveman1 name : " + (braveman1.getName()));
+        System.out.println("spiderman name : " + (spiderman.getName()));
+        braveman1.setName("braveman1");
         System.out.println("------AFTER SET PERSON NAME------");
-        System.out.println("person name : " + (person.getName()));
-        System.out.println("person2 name : " + (person2.getName()));
+        System.out.println("braveman1 name : " + (braveman1.getName()));
+        System.out.println("spiderman name : " + (spiderman.getName()));
     }
 
 }
