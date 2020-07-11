@@ -5,12 +5,18 @@ import sun.net.ftp.FtpClient;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.Vector;
 
 public class Main {
 
     public static void main(String[] args) {
+        List<Integer[]> list = new ArrayList<>();
+        list.add(new Integer[]{1, 3, 3});
+        list.add(new Integer[]{1, 3, 3});
+        System.out.println(list.toArray(new Integer[0][0]));
 //        try{
 //            String host = "193.112.70.161";
 //            int port = 22;
