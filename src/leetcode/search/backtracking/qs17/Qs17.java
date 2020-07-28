@@ -1,4 +1,4 @@
-package leetcode.search.backtracking;
+package leetcode.search.backtracking.qs17;
 
 import java.util.*;
 
