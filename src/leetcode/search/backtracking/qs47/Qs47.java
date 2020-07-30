@@ -1,29 +1,20 @@
-package leetcode.search.backtracking.qs46;
+package leetcode.search.backtracking.qs47;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class Qs46 {
-
-    public static void main(String[] args) {
-        int[] nums = new int[] {1,2,3,1,1,3,2,2,3,4,5};
-        Solution so = new Solution();
-        long time1 = System.currentTimeMillis();
-        so.permute(nums);
-        long time2 = System.currentTimeMillis();
-        System.out.println(time2 - time1);
-//        System.out.println(so.permute(nums));
-    }
-
+public class Qs47 {
 }
 
 class Solution {
     private List<List<Integer>> listList;
     private boolean[] hasVisited;
     private int[] nums;
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permuteUnique(int[] nums) {
         listList = new ArrayList<>();
         hasVisited = new boolean[nums.length];
+        Arrays.sort(nums);
         this.nums = nums;
         execute(new ArrayList<>());
         return listList;
@@ -33,6 +24,10 @@ class Solution {
             listList.add(new ArrayList<>(integerList));
         } else {
             for (int i = 0 ; i < nums.length ; i ++) {
+                // 相同且当前位置的数字下的树枝的情况之前必定遍历过
+                if (i != 0 && nums[i-1] == nums[i] && !hasVisited[i - 1]) {
+                    continue;
+                }
                 if (hasVisited[i]) {
                     continue;
                 }
